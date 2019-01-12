@@ -10,3 +10,8 @@ const BookType = new GraphQLObjectType({
     genre: { type: GraphQLString }
   })
 });
+
+const RootQuery = new GraphQLObjectType({
+  name: "RootQueryType",
+  fields: ""
+});
