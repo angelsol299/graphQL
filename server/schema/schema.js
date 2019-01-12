@@ -7,7 +7,7 @@ const { GraphQLObjectType, GraphQLString, GraphQLSchema } = graphql;
 var books = [
   { name: "name of the wind", genre: "fantasy", id: "1" },
   { name: "going bananas", genre: "real", id: "2" },
-  { name: "love for animals", genre: "dogs", id: "2" }
+  { name: "love for animals", genre: "dogs", id: "3" }
 ];
 
 const BookType = new GraphQLObjectType({
