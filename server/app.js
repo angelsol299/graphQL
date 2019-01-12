@@ -9,7 +9,7 @@ const app = express();
 app.use(
   "/graphql",
   graphqlHTTP({
-    schema: schema
+    schema
   })
 );
 
