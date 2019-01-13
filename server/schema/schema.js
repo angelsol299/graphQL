@@ -17,9 +17,9 @@ var books = [
 ];
 
 var authors = [
-  { name: "Mario Dominguez", age: 29, id: "1" },
-  { name: "Luiz Nazario", age: 39, id: "2" },
-  { name: "Felipe Escolari", age: 32, id: "3" }
+  { name: "Patrick Rothfuss", age: 44, id: "1" },
+  { name: "Brandon Sanderson", age: 42, id: "2" },
+  { name: "Terry Pratchett", age: 66, id: "3" }
 ];
 
 const BookType = new GraphQLObjectType({
@@ -48,8 +48,14 @@ const RootQuery = new GraphQLObjectType({
       args: { id: { type: GraphQLID } },
       resolve(parent, args) {
         // code to get data from db / other source
-        console.log(typeof args.id);
         return _.find(books, { id: args.id });
+      }
+    },
+    author: {
+      type: AuthorType,
+      args: { id: { type: GraphQLID } },
+      resolve(parent, args) {
+        return _.find(authors, { id: args.id });
       }
     }
   }
