@@ -10,6 +10,12 @@ var books = [
   { name: "The Long Earth", genre: "Sci-Fi", id: "3" }
 ];
 
+var authors = [
+  { name: "Mario Dominguez", age: 29, id: "1" },
+  { name: "Luiz Nazario", age: 39, id: "2" },
+  { name: "Felipe Escolari", age: 32, id: "3" }
+];
+
 const BookType = new GraphQLObjectType({
   name: "Book",
   fields: () => ({
