@@ -1,7 +1,7 @@
 const graphql = require("graphql");
-const _ = require("lodash");
-const Book = require(".../models/book");
+const Book = require("../models/book");
 const Author = require("../models/author");
+const _ = require("lodash");
 
 const {
   GraphQLObjectType,
@@ -49,7 +49,6 @@ const RootQuery = new GraphQLObjectType({
       type: BookType,
       args: { id: { type: GraphQLID } },
       resolve(parent, args) {
-        // code to get data from db / other source
         //return _.find(books, { id: args.id });
       }
     },
@@ -62,7 +61,7 @@ const RootQuery = new GraphQLObjectType({
     },
     books: {
       type: new GraphQLList(BookType),
-      resolve(perent, args) {
+      resolve(parent, args) {
         //return books;
       }
     },
@@ -76,7 +75,7 @@ const RootQuery = new GraphQLObjectType({
 });
 
 const Mutation = new GraphQLObjectType({
-  name: "mutation",
+  name: "Mutation",
   fields: {
     addAuthor: {
       type: AuthorType,
@@ -89,7 +88,7 @@ const Mutation = new GraphQLObjectType({
           name: args.name,
           age: args.age
         });
-        author.save();
+        return author.save();
       }
     }
   }
