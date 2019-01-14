@@ -9,8 +9,11 @@ const app = express();
 //connect to mlab database
 // make sure to replace my db string & creds with your own
 mongoose.connect(
-  "mongodb://<dbuser>:<dbpassword>@ds133077.mlab.com:33077/gql-ninja"
+  "mongodb://angelsol299:test123@ds133077.mlab.com:33077/gql-ninja"
 );
+mongoose.connection.once("open", () => {
+  console.log("connected to database");
+});
 
 app.use(
   "/graphql",
